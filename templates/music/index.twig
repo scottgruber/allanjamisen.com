@@ -1,0 +1,37 @@
+{% extends "_layouts/base.twig" %}
+{% set title = "Music" %}
+{% set bodyClass = "l-music" %}
+
+{% block bodyContent %}
+
+{% set query = craft.entries.section('music').limit(10) %}
+{% set entries = query.all() %}
+
+{% paginate query as pageInfo, entries %}
+{# Display the music entries #}
+<div class="h-feed c-music">
+{% for entry in entries %}
+<article class="h-entry">
+    <h2 class="p-name"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+    <p class="p-summary lede">{{ entry.lede }}</p>    
+    {# Fetch all of the categories related to this entry #}
+    {% set categories = craft.categories.relatedTo(entry) %}
+
+    {# Output them #}
+    <div class="tags">
+    <ul>
+    {% for category in categories.all %}
+    <li><a class="p-category" href="{{ category.url }}">{{ category.title }}</a></li>
+    {% endfor %}
+    </ul>
+    </div>
+</article>
+{% endfor %}
+</div>
+<hr>
+<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+
+
+{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+</p>
+{% endblock bodyContent %}

@@ -1,0 +1,25 @@
+{# Pull Quote Block Twig Template Partial #}
+
+{% if block.pullQuote|length %}
+
+{% switch block.pullQuotePosition %}
+
+{% case "normal" %}
+<blockquote>
+{{ block.pullQuote }}
+</blockquote>
+
+{% case "inlineStart" %}
+<blockquote class="c-pullquote--inline-start">
+{{ block.pullQuote }}
+</blockquote>
+
+{% case "inlineEnd" %}
+<blockquote class="c-pullquote--inline-end">
+{{ block.pullQuote }}
+</blockquote>
+
+{% endswitch %}
+
+
+{% endif %}

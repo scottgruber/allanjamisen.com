@@ -1,0 +1,112 @@
+//  =====================================================
+//  HTML Living Standard
+//  Sections elements
+//  https://html.spec.whatwg.org/multipage/sections.html
+//  body, article, section, nav, aside, hgroup, header, footer, address
+//  ======================================================
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: .25fr 1fr;
+  grid-gap: 1vw;
+  max-height: 100vh;
+  margin: var(--spacing);
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+header[role="banner"] {
+  grid-column: 1 / -1;
+  margin: var(--spacing);
+}
+
+header[role="banner"] h1 {
+  margin: 0;
+  font-size: var(--font-size-xx-large);
+}
+
+@media (min-width: 48em) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 1vw;
+    max-height: 100vh;
+    margin: var(--spacing-x-large);
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+  }  
+
+  header[role="banner"] {
+    margin-top: var(--spacing-large);
+    grid-column: 2 / 3;
+    align-self: end;
+  }
+
+  header[role="banner"] h1 {
+    margin: 0;
+    font-size: var(--font-size-display);
+  }
+}
+
+
+
+header[role="banner"] h1 a:link {
+  text-decoration: none;
+}
+
+main {
+  grid-column: 2 / -1;
+  grid-row: 2;
+  align-self: end;
+}
+
+main > * + * {
+  margin-block-start: 1em;
+}
+
+main > p + p {
+  text-indent: 1em;
+}
+
+main > p:first-of-type {
+  margin-block-start: 0;
+}
+
+nav[role="navigation"] {
+  margin: var(--spacing) 0;
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+}
+
+nav[role="navigation"] ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav[role="navigation"] li {
+  margin-inline-end: var(--spacing-small);
+}
+
+nav[role="navigation"] li:first-child {
+  margin-left: 0;
+}
+
+// nav[role="navigation"] li:last-child {
+//   margin-left: auto;
+// }
+
+footer {
+  margin-top: var(--spacing-large);
+  grid-column: 2 / -1;
+  grid-row: 3;
+}

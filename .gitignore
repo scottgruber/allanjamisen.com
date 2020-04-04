@@ -1,0 +1,17 @@
+# Craft CMS files
+
+.env
+config
+cpresources
+modules
+vendor
+storage
+web/assets/
+web/.htaccess
+web/web.config
+web/index.php
+
+# Site files
+.DS_Store
+.config.codekit3
+config.codekit3

@@ -1,0 +1,20 @@
+{# Heading Block Twig Template Partial #}
+<div class="c-heading-block">
+{% set asset = entry.heroImage.one() %}
+
+{% if asset %}
+		<figure>
+		<img src="{{ asset.url }}" alt="{{ asset.imageAlt }}" >
+		{% if asset.imageCaption|length %}
+		<figcaption>
+			{{ asset.imageCaption }}
+		</figcaption>	
+		{% endif %}
+		</figure>
+{% endif %}
+{% if block.sectionHeading |length %}
+<h2><a id="{{ block.sectionHeading }}" href="#{{ block.sectionHeading }}"> 
+{{ block.sectionHeading }}</a></h2>
+{{ block.sectionSummary }}
+{% endif %}
+</div>

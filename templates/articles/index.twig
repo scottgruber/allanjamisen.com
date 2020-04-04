@@ -1,0 +1,27 @@
+{% extends "_layouts/base.twig" %}
+{% set title = "Writing" %}
+{% set bodyClass = "l-articles" %}
+{% block bodyContent %}
+
+{% set query = craft.entries.section('articles').limit(10) %}
+{% set entries = query.all() %}
+
+{% paginate query as pageInfo, entries %}
+{# Display the articles #}
+<div class="h-feed c-articles">
+{% for entry in entries %}
+<article class="h-entry">
+    <h2 class="p-name"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+    <p class="p-summary lede">{{ entry.lede }}</p>
+     
+	<time class="dt-published" datetime="{{ entry.postDate|atom }}">Posted on {{ entry.postDate | date("M jS, Y") }}</time>
+</article>
+{% endfor %}
+</div>
+<hr>
+<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+
+
+{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+</p>
+{% endblock bodyContent %}

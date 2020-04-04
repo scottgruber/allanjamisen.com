@@ -1,0 +1,38 @@
+.standfirst {
+  font-size: var(--font-size-x-large);
+  line-height: var(--line-height-display);
+  margin-top: 0;
+}
+
+.lede {
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-text);
+}
+
+.h-entry h2 {
+  margin-bottom: var(--spacing-small);
+  font-size: var(--font-size-x-large);
+}
+
+.h-entry p {
+  margin-top: 0;
+}
+
+.c-note h1 {
+  font-size: var(--font-size-x-large);
+  line-height: var(--line-height-display);
+  margin-bottom: 0;
+}
+
+.tags h2 {
+  font-size: var(--font-size-medium);
+  font-style: italic;
+}
+
+.authorinfo p {
+  font-size: var(--font-size-small);
+}
+
+main > article {
+  max-width: 70ch;
+}

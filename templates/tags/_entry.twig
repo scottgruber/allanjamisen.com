@@ -1,0 +1,35 @@
+{% extends "_layouts/base.twig" %}
+{% set title = category.title %}
+{% set bodyClass = "l-tag" %}
+
+{% block bodyContent %}
+
+
+{# Fetch all of the entries related to this category #}
+{% set query = craft.entries.relatedTo(category).limit(10) %}
+{% set entries = query.all() %}
+{% paginate query as pageInfo, entries %}
+
+
+{# Output them #}
+
+<h1>“{{ category }}”</h1>
+
+{% for entry in entries %}
+<article class="h-entry c-tags">
+  <h2 class="p-name p-category"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+  <p class="lede">{{ entry.lede }}</p>
+  <a href="{{ entry.url }}">Continue reading →</a>
+</article>
+{% endfor %}
+
+<hr>
+<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+
+<span class="current">{{ pageInfo.currentPage }}</span>
+
+{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+</p>
+
+
+{% endblock bodyContent %}

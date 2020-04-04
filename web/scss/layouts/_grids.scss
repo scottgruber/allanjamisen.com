@@ -1,0 +1,33 @@
+.l-now main {
+  max-width: 70ch;
+}
+
+.l-music .c-music {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  grid-gap: 2vw;
+  max-width: 80%;
+}
+
+@media (min-width: 48em) {
+  .l-about main figure {
+    float: right;
+    max-width: 30vw;
+  }
+}
+
+.l-artworks main,
+.l-artwork main {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin: var(--spacing);
+}
+
+@media (min-width: 48em) {
+  .l-artworks main,
+  .l-artwork main {
+    grid-column: 2 / -1;
+    grid-row: 2;
+    margin: var(--spacing);
+}
+}

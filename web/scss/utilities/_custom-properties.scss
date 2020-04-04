@@ -1,0 +1,100 @@
+:root {
+  // * Typography
+  // ========================================== */
+  --font-family: neue-haas-grotesk-text, sans-serif;
+  --font-family-display: neue-haas-grotesk-display, sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  --text-base-size: 1rem;
+  --text-scale-ratio: 1.125; /* major second */
+  --text-scale-ratio-alt: 1.333;
+  --line-height-text: 1.4;
+  --line-height-heading: 1.2;
+
+  // Type scale – minor third 1.2 ratio
+  
+  --font-size-x-display: 5.16rem;
+  --font-size-display: 4.3rem;
+  --font-size-xxxx-large: 3.583rem;
+  --font-size-xxx-large: 2.986rem;
+  --font-size-xx-large: 2.488rem;
+  --font-size-x-large: 1.728rem;
+  --font-size-large: 1.44rem;
+  --font-size-medium: 1.2rem;
+  --font-size: 1rem;
+  --font-size-small: .833rem;
+
+
+  --color-black: #000;
+  --color-black-90: #1a1a1a;
+  --color-black-80: #333;
+  --color-black-70: #4d4d4d;
+  --color-black-60: #666;
+  --color-black-50: #808080;
+  --color-black-40: #999;
+  --color-black-30: #b3b3b3;
+  --color-black-20: #ccc;
+  --color-black-10: #e6e6e6;
+  --color-white: #fff;
+
+  --aztec: #101c1d;
+  --oxford-blue: #2a383a;
+  --casal: #435657;
+  --william: #5c7273;
+  --juniper: #758e91;
+
+  --color-primary-darker: var(--aztec);
+  --color-primary-dark: var(--oxford-blue);
+  --color-primary: var(--casal);
+  --color-primary-light: var(--william);
+  --color-primary-lighter: var(--juniper);
+  --color-seconday: var(--aztec);
+  --color-accent: var(--juniper);
+
+  //* Border radii
+  // ========================================== */
+
+  --border-radius-x-small: 0.25rem;
+  --border-radius-small: 0.5rem;
+  --border-radius-medium: 0.75rem;
+  --border-radius-large: 1rem;
+  --border-radius-circle: 50%;
+
+  //* Border widths
+  // ========================================== */
+
+  --border-width-hairline: 1px;
+  --border-width-thin: 2px;
+  --border-width-thick: 5px;
+
+  //* Spacing
+  // ========================================== */
+
+  --max-width: 90rem;
+  --spacing-xx-small: 0.125rem;
+  --spacing-x-small: 0.25rem;
+  --spacing-small: 0.5rem;
+  --spacing: 0.75rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-x-large: 2rem;
+  --spacing-xx-large: 3rem;
+
+  //* Compound Grids
+  // ========================================== */
+
+  --grid-compound-3-2: 2fr 1fr 1fr 2fr;
+  --grid-compound-4-3: 3fr 1fr 2fr 2fr 1fr 3fr;
+  --grid-compound-5-4: 6fr 1fr 4fr 3fr 3fr 4fr 1fr 6fr;
+  --grid-compound-6-4: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+  --grid-column-gap: 2vw;
+  --grid-row-gap: 4vh;
+}

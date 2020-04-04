@@ -1,0 +1,112 @@
+{% extends "_layouts/base.twig" %}
+{% set title = "Home" %}
+
+{% block bodyContent %}
+
+{% set single = craft.entries.section('home').one() %}
+{% if single %}
+
+	{% set asset = single.heroImage.one() %}
+
+		{% if asset %}
+				<figure>
+				<img src="{{ asset.url }}" alt="{{ asset.imageAlt }}" >
+				{% if asset.imageCaption|length %}
+				<figcaption>
+					{{ asset.imageCaption }}
+				</figcaption>	
+				{% endif %}
+				</figure>
+		{% endif %}
+
+<h1>{{ single.heading }}</h1>
+<p class="lede">{{ single.lede }}</p>
+{{ single.summary }}
+
+    {% set blocks = entry.articleBody.all() %}
+
+    {% if blocks|length %}
+
+        {% for block in blocks %}
+
+            {% switch block.type %}
+
+                {% case "image" %}
+                {{ block.image[0].getImg() }}
+
+                {% case "pullQuote" %}
+                    {% include ("_partials/_block_pullquote.twig") %}
+
+                {% case "quote" %}
+                    {% include ("_partials/_block_quote.twig") %}
+
+                {% case "formattedText" %}
+                    {% include ("_partials/_block_text_wysiwyg.twig") %}
+
+            {% endswitch %}
+
+        {% endfor %}
+        
+    {% endif %}	
+{% endif %}
+
+
+{% set featuredArtwork = craft.entries.section('artwork').featuredEntry('1') %}
+
+{% if featuredArtwork|length %}
+
+{% for artwork in featuredArtwork.all() %}
+
+    <article class="h-entry c-artworks">
+    {% set artworkImage = artwork.artworkImage.one() %}
+    {% set artworkImageMedium = artwork.artworkImageMedium.one() %}
+    {% set artworkImageSmall = artwork.artworkImageSmall.one() %}
+    <picture>
+        <a href="{{ artwork.url }}">
+        {% if artworkImage|length %}
+        <source srcset="{{ artworkImage.url }} 2x" media="(min-width: 60em)">
+        {% endif %}
+        {% if artworkImageMedium|length %}
+        <source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
+        {% endif %}			
+        {% if artworkImageSmall|length %}
+        <img src="{{ artworkImageSmall.url }}" alt="{{ artworkImageSmall.imageAlt }}" />
+        {% endif %}
+        </a>
+    </picture>
+        <h2 class="p-name"><a href="{{ artwork.url }}">{{ artwork.title }}</a></h2>
+    </article>
+        
+{% endfor %}
+
+{% endif %}
+
+
+{% set latestNotes = craft.entries.section('notes').featuredEntry('1') %}
+{% if latestNotes|length %}
+
+    {% for note in latestNotes.all() %}
+    <article class="h-entry c-notes">
+        <h2 class="p-name"><a href="{{ note.url }}">{{ note.title }}</a></h2>
+        <p class="p-summary lede">{{ note.lede }}</p>
+        <p class="small"><time class="dt-published" datetime="{{ note.postDate|atom }}">Now for {{ note.postDate | date("M jS, Y") }} at {{ note.postDate | date("g:i A") }}</time></p>
+    </article>    
+    {% endfor %}
+
+{% endif %}
+
+{% set featuredArticles = craft.entries.section('articles').featuredEntry('1') %}
+{% if featuredArticles|length %}
+
+    {% for article in featuredArticles.all() %}
+    <article class="h-entry c-articles">
+        <h2 class="p-name"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <p class="p-summary lede">{{ article.lede }}</p>
+        <p class="small"><time class="dt-published" datetime="{{ article.postDate|atom }}">Posted {{ article.postDate | date("M jS, Y") }} at {{ article.postDate | date("g:i A") }}</time></p>
+    </article>    
+    {% endfor %}
+
+{% endif %}
+
+
+{% endblock bodyContent %}

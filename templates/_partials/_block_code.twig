@@ -1,0 +1,15 @@
+{# Code Block Twig Template Partial #}
+
+<figure class="c-code">
+<pre><code class="language-{{ block.codeLanguage }}">{{ block.code }}</code></pre>
+  {% if block.codeCaption |length %}
+  <figcaption>
+  {% if block.codeLink |length %}
+  <p><a href="{{ block.codeLink }}">{{ block.codeCaption }}</a></p>
+  {% else %}
+  <p>{{ block.codeCaption}}</p>
+  {% endif %}
+  </figcaption>
+  {% endif %}
+</figure>
+					

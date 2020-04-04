@@ -1,0 +1,56 @@
+{# Image Block Twig Template Partial #}
+{% set image = block.image.first() %}
+
+{% if image %}
+{% switch block.imageType %}
+
+{% case "normal" %}
+
+{% case "fullWidth" %}
+
+{% case "infographic" %}
+
+{% endswitch %}
+      
+      
+    {% switch block.imageType %}
+        {% case "normal" %}
+            {% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1200, ratio: 2/1, jpegQuality: 75 },
+                { width: 1024, ratio: 2/1, jpegQuality: 75 },
+                { width: 768, ratio: 4/3, jpegQuality: 60 },
+                ],{ format: 'jpg', allowUpscale: false, mode: 'crop', position: image.focusPctX ~ '% ' ~ image.focusPctY ~ '%', interlace: true }) %}
+            {% if lazyImage %}
+                <img class="lazyload" src="{{ craft.imager.base64Pixel(2,1) }}" data-sizes="100vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" alt="{{ image.title }}" >
+            {% else %}
+                <img src="{{ transformedImages[1].url }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedImages) }}" alt="{{ image.title }}" >
+            {% endif %}
+        {% case "fullWidth" %}
+            {% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1200, ratio: 2/1, jpegQuality: 75 },
+                { width: 1024, ratio: 2/1, jpegQuality: 75 },
+                { width: 768, ratio: 4/3, jpegQuality: 60 },
+                ],{ format: 'jpg', allowUpscale: false, mode: 'crop', position: image.focusPctX ~ '% ' ~ image.focusPctY ~ '%', interlace: true }) %}
+            {% if lazyImage %}
+                <img class="fullwidth lazyload" src="{{ craft.imager.base64Pixel(2,1) }}" data-sizes="100vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" alt="{{ image.title }}" height="auto" width="100%">
+            {% else %}
+                <img src="{{ transformedImages[1].url }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedImages) }}" alt="{{ image.title }}" height="auto" width="100%">
+            {% endif %}
+
+        {% case "infographic" %}
+            {% if lazyImage %}
+                <img class="infographic lazyload" src="{{ craft.imager.base64Pixel(image.width, image.height) }}" data-src="{{ image.url }}" alt="{{ image.title }}" height="{{ image.height }}" width="{{ image.width }}">
+            {% else %}
+                <img class="infographic" src="{{ image.url }}" alt="{{ image.title }}" height="{{ image.height }}" width="{{ image.width }}">
+            {% endif %}
+        {% endswitch %}
+
+    </figure>
+    {% if block.caption|length %}
+    <figcaption>
+        {{ block.caption }}
+    </figcaption>
+    {% endif %}
+      
+
+{% endif %}

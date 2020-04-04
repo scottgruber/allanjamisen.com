@@ -1,0 +1,165 @@
+{% extends "_layouts/base.twig" %}
+{% set title = entry.title %}
+{% set bodyClass = "l-artwork" %}
+{# Get entry's previous and next links #}
+
+{% set criteria = {section: 'Artwork', orderBy: 'postDate'} %}
+{% set prev = entry.getPrev(criteria) %}
+{% set next = entry.getNext(criteria) %}
+
+{% block bodyContent %}
+
+<article class="h-entry c-artwork">
+{% set artworkImage = entry.artworkImage.one() %}
+{% set artworkImageMedium = entry.artworkImageMedium.one() %}
+{% set artworkImageSmall = entry.artworkImageSmall.one() %}
+
+<picture>
+	{% if artworkImage|length %}
+	<source srcset="{{ artworkImage.url }}" media="(min-width: 60em)">
+	{% endif %}
+	{% if artworkImageMedium|length %}
+	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
+	{% endif %}			
+	{% if artworkImageSmall|length %}
+	<img src="{{ artworkImageSmall.url }}" alt="{{ artworkImageSmall.imageAlt }}" />
+	{% endif %}
+</picture>
+
+<header>
+	<h1 class="p-name">{{ entry.title }}</h1>
+	{% if entry.lede %}
+	<p class="p-summary lede">{{ entry.lede }}</p>
+{% endif %}
+</header>
+
+
+
+
+
+<div class="e-content">
+<div class="cdwalite">
+				<h2>Citation</h2>
+     		<p class="title"><b>Title</b>: {{ entry.title }}</p>
+				
+				{% set categories = craft.categories.group('media').relatedTo(entry) %}
+				{% if categories|length %}
+				<p><b>Media</b>: 
+					{% for category in categories.all() %}
+						<a class="p-category" href="{{ category.url }}">{{ category.title }}</a>
+					{% endfor %}
+				</p>
+				{% endif %}
+
+
+				{% if entry.artistName %}
+    		<p class="artistName h-card"><b>Artist</b>: <span class="p-name>{{ entry.artistName }}</span></p>
+				{% endif %}
+
+				{% if entry.artistBirthDate %}
+				<p class="artistBirthDate">b. <time class="dt-bday" datetime="{{ entry.artistBirthDate|date('Y-m-d')}}">{{ entry.artistBirthDate | date("F j, Y") }}</time></p>
+				{% endif %}
+
+				{% if entry.artistNationality %}
+				<p class="p-country-name">{{ entry.artistNationality }}</small>
+				{% endif %}
+				
+				{% if entry.artistRole %}
+    		<p class="p-role"><b>Role</b>: {{ entry.artistRole }}</p>
+				{% endif %}
+				
+				{% if entry.creationDate %}
+    		<p class="creationDate"><b>Created</b>: <time datetime="{{ entry.creationDate|date('Y-m-d')}}">{{ entry.creationDate | date("M j, Y") }}</time></p>
+				{% endif %}
+
+				{% if entry.creationDateLatestDate %}
+    		<p class="creationDateLatestDate"><b>Lastest</b>: <time datetime="{{ entry.creationDateLatestDate|date('Y-m-d')}}">{{ entry.creationDateLatestDate | date("Y-n-j") }}</time></p>
+				{% endif %}
+
+				{% if entry.descriptiveNote %}
+    		<p class="descriptiveNote"><b>Note</b></p> {{ entry.descriptiveNote }}
+				{% endif %}
+
+				{% if entry.language %}
+    		<p class="language"><b>Language</b>: {{ entry.language }}</p>
+				{% endif %}
+			
+				{% if entry.materialsAndTechniques %}
+    		<p class="materialsAndTechniques"><b>Materials and Techniques</b>: {{ entry.materialsAndTechniques }}</p>
+				{% endif %}
+
+				{% if entry.artworkStyle %}
+    		<p class="artworkStyle"><b>Style</b>: {{ entry.artworkStyle }}</p>
+				{% endif %}
+
+				{% if entry.measurements %}
+    		<p class="displayMeasurements">Measurements: {{ entry.measurements }}</p>
+				{% endif %}
+
+				{% if entry.subjectMatter %}
+    		<p class="subjectMatter"><b>Subject Matter</b>: {{ entry.subjectMatter }}</p>
+				{% endif %}
+
+				{% if entry.copyright %}
+    		<small class="copyright"><strong>Copyright</strong>: {{ entry.copyright }}</small>
+				{% endif %}    
+    		
+				<p class="locationWrap"> 
+
+				{% if entry.provenance %}
+    		<span class="provenance">Provenance: {{ entry.provenance }}</span><br>
+				{% endif %}
+
+				{% if entry.repositoryName %}
+    		<span class="repositoryName">Museum: {{ entry.repositoryName }}</span><br>
+				{% endif %}
+				
+				{% if entry.repositoryLocation %}
+    		<span class="repositoryLocation">	{{ entry.repositoryLocation }}</span><br>
+				{% endif %}
+				
+				{% if entry.repositoryID %}
+    		<span class="repositoryNumber">ID: {{ entry.repositoryID }}</span><br>
+				{% endif %}
+        
+    </span> 
+</p>
+
+
+</div>	
+
+<footer class="authorinfo">
+	<p><a rel="me" class="p-author h-card u-url" href="{{ siteUrl }}">{{ entry.author.name }}</a> on   
+	<time class="dt-published" datetime="{{ entry.postDate|atom }}">{{ entry.postDate | date("M jS, Y") }}</time></p>
+</footer>
+
+	{# Fetch all of the categories related to this entry #}
+	{% set categories = craft.categories.group('tags').relatedTo(entry) %}
+	{% if categories|length %}
+	<div class="tags">
+	<h2>Tag</h2> 
+	{# Output them #}
+	<ul>
+		{% for category in categories.all %}
+		<li><a class="p-category" href="{{ category.url }}">{{ category.title }}</a></li>
+		{% endfor %}
+	</ul>
+	</div>
+	{% endif %}
+
+</article>
+
+{% if criteria %}
+<hr>
+<small>
+{% if prev %}
+	<span><a href="{{ prev.url }}">← Previous {{ prev.title }}</a></span>
+{% endif %}
+
+{% if next %}
+   <span><a href="{{ next.url }}">{{ next.title }} Next → </a></span>
+{% endif %}
+</small>
+{% endif %}
+
+{% endblock bodyContent %}

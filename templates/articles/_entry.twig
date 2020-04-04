@@ -1,0 +1,107 @@
+{% extends "_layouts/base.twig" %}
+{% set title = entry.title %}
+{% set bodyClass = "l-article" %}
+
+{# Get entry's previous and next links #}
+
+{% set criteria = {section: 'Articles', orderBy: 'postDate'} %}
+{% set prev = entry.getPrev(criteria) %}
+{% set next = entry.getNext(criteria) %}
+
+{% block bodyContent %}
+
+<article class="h-entry c-article">
+<header>
+	<h1 class="p-name">{{ entry.title }}</h1>
+	{% if entry.lede %}
+	<p class="p-summary lede">{{ entry.lede }}</p>
+{% endif %}
+</header>
+
+{% set asset = entry.image.one() %}
+
+{% if asset %}
+		<figure>
+		<img src="{{ asset.url }}" alt="{{ asset.imageAlt }}" >
+		{% if asset.imageCaption|length %}
+		<figcaption>
+			{{ asset.imageCaption }}
+		</figcaption>	
+		{% endif %}
+		</figure>
+{% endif %}
+
+<div class="e-content">
+
+{% if entry.body %}
+	{{ entry.body }}
+{% endif %}
+
+{% set blocks = entry.articleBody.all() %}
+
+{% if blocks|length %}
+
+	{% for block in blocks %}
+
+		{% switch block.type %}
+
+			{% case "image" %}
+			{{ block.image[0].getImg() }}
+
+			{% case "code" %}
+				{% include ("_partials/_block_code.twig") %}
+
+			{% case "pullQuote" %}
+				{% include ("_partials/_block_pullquote.twig") %}
+
+			{% case "quote" %}
+				{% include ("_partials/_block_quote.twig") %}
+
+			{% case "formattedText" %}
+				{% include ("_partials/_block_text_wysiwyg.twig") %}
+
+			{% case "text" %}
+				{% include ("_partials/_block_text.twig") %}
+
+		{% endswitch %}
+
+	{% endfor %}
+	
+{% endif %}		
+</div>	
+
+<footer class="authorinfo">
+	<p><a rel="me" class="p-author h-card u-url" href="{{ siteUrl }}">{{ entry.author.name }}</a> on   
+	<time class="dt-published" datetime="{{ entry.postDate|atom }}">{{ entry.postDate | date("M jS, Y") }}</time></p>
+</footer>
+
+	{# Fetch all of the categories related to this entry #}
+	{% set categories = craft.categories.relatedTo(entry) %}
+		{% if categories|length %}
+	<div class="tags">
+	<h2>Tag</h2> 
+	{# Output them #}
+	<ul>
+	{% for category in categories.all %}
+	<li><a class="p-category" href="{{ category.url }}">{{ category.title }}</a></li>
+	{% endfor %}
+	</ul>
+	</div>
+{% endif %}
+
+</article>
+
+{% if criteria %}
+<hr>
+<small>
+{% if prev %}
+	<span><a href="{{ prev.url }}">← Previous {{ prev.title }}</a></span>
+{% endif %}
+
+{% if next %}
+   <span><a href="{{ next.url }}">{{ next.title }} Next → </a></span>
+{% endif %}
+</small>
+{% endif %}
+
+{% endblock bodyContent %}

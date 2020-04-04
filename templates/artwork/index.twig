@@ -1,0 +1,45 @@
+{% extends "_layouts/base.twig" %}
+{% set title = "Artwork" %}
+{% set bodyClass = "l-artworks" %}
+
+{% block bodyContent %}
+
+{% set query = craft.entries.section('artwork').limit(10) %}
+{% set entries = query.all() %}
+
+{% paginate query as pageInfo, entries %}
+{# Display the articles #}
+<div class="h-feed c-articles">
+{% for entry in entries %}
+<article class="h-entry">
+
+{% set artworkImage = entry.artworkImage.one() %}
+{% set artworkImageMedium = entry.artworkImageMedium.one() %}
+{% set artworkImageSmall = entry.artworkImageSmall.one() %}
+
+<picture>
+<a href="{{ entry.url }}">
+	{% if artworkImage|length %}
+	<source srcset="{{ artworkImage.url }} 2x" media="(min-width: 60em)">
+	{% endif %}
+	{% if artworkImageMedium|length %}
+	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
+	{% endif %}			
+	{% if artworkImageSmall|length %}
+	<img src="{{ artworkImageSmall.url }}" alt="{{ artworkImageSmall.imageAlt }}" />
+	{% endif %}
+</a>	
+</picture>
+
+    <h2 class="p-name"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+    <p class="p-summary lede">{{ entry.lede }}</p>
+</article>
+{% endfor %}
+</div>
+<hr>
+<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+
+
+{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+</p>
+{% endblock bodyContent %}
