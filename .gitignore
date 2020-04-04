@@ -7,9 +7,6 @@ modules
 vendor
 storage
 web/assets/
-web/.htaccess
-web/web.config
-web/index.php
 
 # Site files
 .DS_Store
