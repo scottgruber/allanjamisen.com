@@ -19,15 +19,16 @@
 
 <picture>
 <a href="{{ entry.url }}">
-	{% if artworkImage|length %}
+<img src="{{ artworkImage.url }}" alt="{{ artworkImageSmall.imageAlt }}" />
+	{# {% if artworkImage|length %}
 	<source srcset="{{ artworkImage.url }} 2x" media="(min-width: 60em)">
 	{% endif %}
 	{% if artworkImageMedium|length %}
 	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
-	{% endif %}			
-	{% if artworkImageSmall|length OR artworkImage|length %}
+	{% endif %}			 #}
+	{# {% if artworkImageSmall|length %}
 	<img src="{{ artworkImageSmall.url }}" srcset="{{ artworkImage.url }} 2x" alt="{{ artworkImageSmall.imageAlt }}" />
-	{% endif %}
+	{% endif %} #}
 </a>	
 </picture>
 

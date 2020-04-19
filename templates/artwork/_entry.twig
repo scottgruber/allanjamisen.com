@@ -15,15 +15,16 @@
 {% set artworkImageSmall = entry.artworkImageSmall.one() %}
 
 <picture>
-	{% if artworkImage|length %}
+	{# {% if artworkImage|length %}
 	<source srcset="{{ artworkImage.url }}" media="(min-width: 60em)">
 	{% endif %}
 	{% if artworkImageMedium|length %}
 	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
 	{% endif %}			
-	{% if artworkImageSmall|length OR artworkImage|length %}
+	{% if artworkImageSmall|length %}
 	<img src="{{ artworkImageSmall.url }}" srcset="{{ artworkImage.url }} 2x" alt="{{ artworkImageSmall.imageAlt }}" />
-	{% endif %}
+	{% endif %} #}
+	<img src="{{ artworkImage.url }}" srcset="{{ artworkImage.url }} 2x" alt="{{ artworkImageSmall.imageAlt }}" />
 </picture>
 
 <header>
