@@ -1,0 +1,26 @@
+{% extends "_layouts/base.twig" %}
+{% set title = entry.title %}
+{% set bodyClass = "l-about" %}
+{% block bodyContent %}
+
+{# Fetch all of the entries related to this category #}
+
+{% include "_partials/_series.twig" %}
+
+{% set single = craft.entries.section('midCenturyScience').one() %}
+{% if single %}
+
+  {% set image = single.heroImage.one() %}
+
+	{% if image|length %}
+  <figure>
+	  <img src="{{ image.url }}" alt="{{ image.imageAlt }}" />
+  </figure>
+	{% endif %}
+
+<p class="p-summary lede">{{ single.lede }}</p>
+{{ single.body }}</p>
+
+	{% endif %}
+
+{% endblock bodyContent %}

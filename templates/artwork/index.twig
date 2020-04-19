@@ -25,7 +25,7 @@
 	{% if artworkImageMedium|length %}
 	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
 	{% endif %}			
-	{% if artworkImageSmall|length %}
+	{% if artworkImageSmall|length OR artworkImage|length %}
 	<img src="{{ artworkImageSmall.url }}" srcset="{{ artworkImage.url }} 2x" alt="{{ artworkImageSmall.imageAlt }}" />
 	{% endif %}
 </a>	
