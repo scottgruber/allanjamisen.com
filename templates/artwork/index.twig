@@ -20,15 +20,15 @@
 <picture>
 <a href="{{ entry.url }}">
 <img src="{{ artworkImage.url }}" alt="{{ artworkImageSmall.imageAlt }}" />
-	{# {% if artworkImage|length %}
+	{% if artworkImage|length %}
 	<source srcset="{{ artworkImage.url }} 2x" media="(min-width: 60em)">
 	{% endif %}
 	{% if artworkImageMedium|length %}
 	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
 	{% endif %}			 #}
-	{# {% if artworkImageSmall|length %}
+	{% if artworkImageSmall|length %}
 	<img src="{{ artworkImageSmall.url }}" srcset="{{ artworkImage.url }} 2x" alt="{{ artworkImageSmall.imageAlt }}" />
-	{% endif %} #}
+	{% endif %}
 </a>	
 </picture>
 
