@@ -13,7 +13,7 @@
 {% for entry in entries %}
 <article class="h-entry">
     <h2 class="p-name"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-    <p class="p-summary lede">{{ entry.lede }}</p>    
+   
     {# Fetch all of the categories related to this entry #}
     {% set categories = craft.categories.relatedTo(entry) %}
 
