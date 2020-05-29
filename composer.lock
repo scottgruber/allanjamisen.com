@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "574fdd415c223195cb93f8fd90bfd6b5",
+    "content-hash": "a5ea896a11226b0836be7734e5cb2c14",
     "packages": [
         {
             "name": "cakephp/core",
@@ -382,11 +382,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.20",
+            "version": "3.4.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/a4e4ae5ce7b067f31d00c27770bc3e7c8434ba91",
-                "reference": "a4e4ae5ce7b067f31d00c27770bc3e7c8434ba91",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/1ee76164a5d180fed392f2c4d9d26dcaf055672b",
+                "reference": "1ee76164a5d180fed392f2c4d9d26dcaf055672b",
                 "shasum": ""
             },
             "require": {
@@ -467,7 +467,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-05-18T15:31:36+00:00"
+            "time": "2020-05-28T19:26:09+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -1304,20 +1304,15 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.9",
+            "version": "5.2.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/44c6787311242a979fa15c704327c20e7221a0e4",
-                "reference": "44c6787311242a979fa15c704327c20e7221a0e4",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/2ba9c8c862ecd5510ed16c6340aa9f6eadb4f31b",
+                "reference": "2ba9c8c862ecd5510ed16c6340aa9f6eadb4f31b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.2.20||~2.15.1",
-                "json-schema/json-schema-test-suite": "1.2.0",
-                "phpunit/phpunit": "^4.8.35"
             },
             "bin": [
                 "bin/validate-json"
@@ -1333,7 +1328,6 @@
                     "JsonSchema\\": "src/JsonSchema/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1361,7 +1355,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2019-09-25T14:49:45+00:00"
+            "time": "2020-05-27T16:41:55+00:00"
         },
         {
             "name": "kylekatarnls/update-helper",
