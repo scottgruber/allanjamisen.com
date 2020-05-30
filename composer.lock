@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5ea896a11226b0836be7734e5cb2c14",
+    "content-hash": "432c24fb02bbcfad395fc946081790e5",
     "packages": [
         {
             "name": "cakephp/core",
@@ -382,11 +382,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.21",
+            "version": "3.4.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/1ee76164a5d180fed392f2c4d9d26dcaf055672b",
-                "reference": "1ee76164a5d180fed392f2c4d9d26dcaf055672b",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/8ebb4d318afed87d298c0b26f9efc69e4e0fd538",
+                "reference": "8ebb4d318afed87d298c0b26f9efc69e4e0fd538",
                 "shasum": ""
             },
             "require": {
@@ -467,7 +467,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-05-28T19:26:09+00:00"
+            "time": "2020-05-30T01:40:45+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -703,11 +703,11 @@
         },
         {
             "name": "craftcms/server-check",
-            "version": "1.1.8",
+            "version": "1.1.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/a7b6c172b631ec822fbdccbe011dbcf77395a9ee",
-                "reference": "a7b6c172b631ec822fbdccbe011dbcf77395a9ee",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/0f445599b3a2ccbeba4a83cf34a8070f56326909",
+                "reference": "0f445599b3a2ccbeba4a83cf34a8070f56326909",
                 "shasum": ""
             },
             "type": "library",
@@ -716,7 +716,6 @@
                     "server/requirements"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -728,7 +727,7 @@
                 "requirements",
                 "yii2"
             ],
-            "time": "2020-01-17T22:23:26+00:00"
+            "time": "2020-05-28T16:57:05+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
