@@ -24,11 +24,11 @@
 {% endfor %}
 
 <hr>
-<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">← Previous</a>{% endif %}
 
 <span class="current">{{ pageInfo.currentPage }}</span>
 
-{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next →</a>{% endif %}
 </p>
 
 
