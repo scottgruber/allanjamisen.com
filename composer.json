@@ -1,6 +1,8 @@
 {
   "require": {
-    "craftcms/cms": "3.4.22",
+    "craftcms/cms": "3.4.22.1",
+    "craftcms/contact-form": "2.2.7",
+    "craftcms/contact-form-honeypot": "1.0.2",
     "craftcms/feed-me": "4.2.3",
     "craftcms/postmark": "2.0.2",
     "craftcms/redactor": "2.6.1",

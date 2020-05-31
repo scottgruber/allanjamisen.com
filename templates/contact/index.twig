@@ -38,7 +38,8 @@
     {{ csrfInput() }}
     <input type="hidden" name="action" value="contact-form/send">
     {{ redirectInput('contact/thanks?from={fromName}') }}
-
+    
+    <input id="sugarbowl" name="sugarbowl" type="hidden">
 
     <h3><label for="from-name">Your Name</label></h3>
     <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
