@@ -70,7 +70,7 @@ main > * + * {
   margin-block-start: 1em;
 }
 
-main > p + p {
+main > :not(p.summary) + p {
   text-indent: 1em;
 }
 
