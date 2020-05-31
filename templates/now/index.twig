@@ -8,8 +8,16 @@
 
 {% if single %}
 <h1>{{ single.title }}</h1>
-<p class="p-summary standfirst">{{ single.lede }}</p>
-<p class="lede">{{ single.summary }}</p>
+ {% set image = single.heroImage.one() %}
+
+	{% if image|length %}
+  <figure>
+	  <img src="{{ image.url }}" alt="{{ image.imageAlt }}" />
+  </figure>
+	{% endif %}
+  
+<p class="p-summary standfirst">{{ single.summary }}</p>
+<p class="lede">{{ single.lede }}</p>
 {% endif %}
 
 {% set query = craft.entries.section('notes').limit(10) %}
