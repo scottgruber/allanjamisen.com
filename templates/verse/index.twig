@@ -1,0 +1,25 @@
+{% extends "_layouts/base.twig" %}
+{% set title = "Verse" %}
+{% set bodyClass = "l-verse" %}
+{% block bodyContent %}
+
+{% set query = craft.entries.section('verse').limit(50) %}
+{% set entries = query.all() %}
+
+{% paginate query as pageInfo, entries %}
+{# Display the articles #}
+<div class="h-feed c-verse">
+{% for entry in entries %}
+<article class="h-entry">
+    <h2 class="p-name"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+    <p class="p-summary lede">{{ entry.summary }}</p>
+</article>
+{% endfor %}
+</div>
+<hr>
+<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">← Previous</a>{% endif %}
+
+
+{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next →</a>{% endif %}
+</p>
+{% endblock bodyContent %}
