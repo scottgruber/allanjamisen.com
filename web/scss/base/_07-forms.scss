@@ -11,3 +11,23 @@ textarea,
 select {
   font: inherit;
 }
+
+button {
+  display: block;
+  padding: var(--spacing-small) var(--spacing-large);
+  margin: var(--spacing-large) 0;
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.015em;
+  background-color: #efefef;
+}
+
+form h3 {
+  margin-top: var(--spacing-large);
+  margin-bottom: var(--spacing-x-small);
+  font-size: var(--font-size-medium);
+}
+
+input {
+  padding: var(--spacing-small);
+}
