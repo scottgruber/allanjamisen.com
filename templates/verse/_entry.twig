@@ -44,31 +44,17 @@
 	<time class="dt-published" datetime="{{ entry.postDate|atom }}">{{ entry.postDate | date("M jS, Y") }}</time></p>
 </footer>
 
-	{# Fetch all of the categories related to this entry #}
-	{% set categories = craft.categories.relatedTo(entry) %}
-		{% if categories|length %}
-	<div class="tags">
-	<h2>Tag</h2> 
-	{# Output them #}
-	<ul>
-	{% for category in categories.all %}
-	<li><a class="p-category" href="{{ category.url }}">{{ category.title }}</a></li>
-	{% endfor %}
-	</ul>
-	</div>
-{% endif %}
-
 </article>
 
 {% if criteria %}
 <hr>
 <small>
 {% if prev %}
-	<span><a href="{{ prev.url }}">← Previous {{ prev.title }}</a></span>
+	<span><a href="{{ prev.url }}">← Previous</a></span>
 {% endif %}
 
 {% if next %}
-   <span><a href="{{ next.url }}">{{ next.title }} Next → </a></span>
+   <span><a href="{{ next.url }}">Next → </a></span>
 {% endif %}
 </small>
 {% endif %}
