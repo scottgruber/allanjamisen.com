@@ -70,12 +70,12 @@ main > * + * {
   margin-block-start: 1em;
 }
 
-main > :not(p.summary) + p {
-  text-indent: 1em;
-}
-
 main > p:first-of-type {
   margin-block-start: 0;
+}
+
+main > :not(p.summary) + p {
+  text-indent: 1em;
 }
 
 nav[role="navigation"] {
@@ -105,8 +105,14 @@ nav[role="navigation"] li:first-child {
 //   margin-left: auto;
 // }
 
+footer[role="contentinfo"] .social-icons a:link {
+  text-decoration: none;
+}
+
 footer {
   margin-top: var(--spacing-large);
   grid-column: 2 / -1;
   grid-row: 3;
 }
+
+
