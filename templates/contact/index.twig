@@ -1,0 +1,79 @@
+{% extends "_layouts/base.twig" %}
+{% set title = entry.title %}
+{% set bodyClass = "l-contact" %}
+
+{% block bodyContent %}
+
+{% set single = craft.entries.section('contact').one() %}
+
+{% if single %}
+<h1>{{ single.title }}</h1>
+
+ {% set image = single.heroImage.one() %}
+
+	{% if image|length %}
+  <figure>
+	  <img src="{{ image.url }}" alt="{{ image.imageAlt }}" />
+  </figure>
+	{% endif %}
+
+<p class="p-summary standfirst">{{ single.summary }}</p>
+<p class="lede">{{ single.lede }}</p>
+{% endif %}
+
+{# Display contact form #}
+{% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% from _self import errorList %}
+
+<form method="post" action="" accept-charset="UTF-8">
+    {{ csrfInput() }}
+    <input type="hidden" name="action" value="contact-form/send">
+    {{ redirectInput('contact/thanks?from={fromName}') }}
+
+
+    <h3><label for="from-name">Your Name</label></h3>
+    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+    <h3><label for="from-email">Your Email</label></h3>
+    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+    
+    <h3><label for="phone">Your phone number</label></h3>
+    <input id="phone" type="text" name="message[Phone]" value="">
+
+
+    
+    <h3>What services are you interested in?</h3>
+  
+    <label><input type="checkbox" name="message[Services][]" value="Art"> Art</label>
+    <label><input type="checkbox" name="message[Services][]" value="Music"> Music</label>
+    <label><input type="checkbox" name="message[Services][]" value="Strategy"> Strategy</label>
+    <label><input type="checkbox" name="message[Services][]" value="Marketing"> Marketing</label>
+    <label><input type="checkbox" name="message[Services][]" value="Hello"> Just saying hello</label>
+
+
+    <h3><label for="message">Message</label></h3>
+    <textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message ?? '' }}</textarea>
+    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+    
+    
+    <button type="submit">Send</button>
+    
+</form>
+
+{# End contact form #}
+
+
+
+{% endblock bodyContent %}
