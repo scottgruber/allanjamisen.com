@@ -1,0 +1,31 @@
+{% set query = craft.categories().group('series').relatedTo('midcentury-science') %}
+
+{% set entries = query.all() %}
+
+<div class="h-feed c-articles">
+{% for entry in entries %}
+<article class="h-entry">
+
+{% set artworkImage = entry.artworkImage %}
+{% set artworkImageMedium = entry.artworkImageMedium %}
+{% set artworkImageSmall = entry.artworkImageSmall %}
+
+<picture>
+<a href="{{ entry.url }}">
+	{% if artworkImage|length %}
+	<source srcset="{{ artworkImage.url }} 2x" media="(min-width: 60em)">
+	{% endif %}
+	{% if artworkImageMedium|length %}
+	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
+	{% endif %}			
+	{% if artworkImageSmall|length %}
+	<img src="{{ artworkImageSmall.url }}" alt="{{ artworkImageSmall.imageAlt }}" />
+	{% endif %}
+</a>	
+</picture>
+
+    <h2 class="p-name"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+    <p class="p-summary lede">{{ entry.categoryDescription }}</p>
+</article>
+{% endfor %}
+</div>

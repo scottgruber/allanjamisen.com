@@ -1,0 +1,48 @@
+{% extends "_layouts/base.twig" %}
+{% set title = category.title %}
+{% set bodyClass = "l-tag" %}
+
+{% block bodyContent %}
+
+
+{# Fetch all of the entries related to this category #}
+{% set query = craft.entries.relatedTo(category).limit(10) %}
+{% set entries = query.all() %}
+
+
+
+{# Output them #}
+
+<h1>{{ category }}</h1>
+
+{% for entry in entries %}
+<article class="h-entry c-tags">
+{% set artworkImage = entry.artworkImage.one() %}
+{% set artworkImageMedium = entry.artworkImageMedium.one() %}
+{% set artworkImageSmall = entry.artworkImageSmall.one() %}
+
+<picture>
+	{% if artworkImage|length %}
+	<source srcset="{{ artworkImage.url }}" media="(min-width: 60em)">
+	{% endif %}
+	{% if artworkImageMedium|length %}
+	<source srcset="{{ artworkImageMedium.url }}" media="(min-width: 48em)">
+	{% endif %}			
+	{% if artworkImageSmall|length %}
+	<img src="{{ artworkImageSmall.url }}" alt="{{ artworkImageSmall.imageAlt }}" />
+	{% endif %}
+</picture>
+  <h2 class="p-name p-category"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+  <p class="lede">{{ entry.lede }}</p>
+</article>
+{% endfor %}
+
+<hr>
+{% paginate query as pageInfo, categories %}
+<p>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">← Previous</a>{% endif %}
+
+{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next →</a>{% endif %}
+</p>
+
+
+{% endblock bodyContent %}

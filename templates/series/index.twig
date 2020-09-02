@@ -1,0 +1,35 @@
+{% extends "_layouts/base.twig" %}
+
+{% block bodyContent %}
+
+
+{# Create a category query with the 'group' parameter #}
+{% set myCategoryQuery = craft.categories().limit(null).group('series') %}
+
+{# Fetch the categories #}
+{% set categories = myCategoryQuery.all() %}
+
+<h1>Series</h1>
+
+{# Display the navigation #}
+<ul>
+{% nav category in categories %}
+
+{# Fetch number of entries tagged by a categories #}
+
+{% set numofEntries = craft.entries.limit(null).relatedTo({
+        targetElement: category,
+    }).count() %}
+<li>
+    <a href="{{ category.url }}">{{ category.title }}</a> ({{numofEntries}})
+    {% ifchildren %}
+        <ul>
+            {% children %}
+        </ul>
+    {% endifchildren %}
+</li>
+{% endnav %}
+</ul>
+
+
+{% endblock bodyContent %}

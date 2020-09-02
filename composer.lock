@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d17825ee749210112f808a9e82ff873",
+    "content-hash": "216951ac0198a58199a08894d998a8fe",
     "packages": [
         {
             "name": "cakephp/core",
@@ -156,11 +156,11 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.7",
+            "version": "1.2.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/95c63ab2117a72f48f5a55da9740a3273d45b7fd",
-                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/8a7ecad675253e4654ea05505233285377405215",
+                "reference": "8a7ecad675253e4654ea05505233285377405215",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2020-04-08T08:27:21+00:00"
+            "time": "2020-08-23T12:54:47+00:00"
         },
         {
             "name": "composer/composer",
@@ -382,11 +382,11 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51",
-                "reference": "fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/ebd27a9866ae8254e873866f795491f02418c5a5",
+                "reference": "ebd27a9866ae8254e873866f795491f02418c5a5",
                 "shasum": ""
             },
             "require": {
@@ -413,15 +413,15 @@
                 "Xdebug",
                 "performance"
             ],
-            "time": "2020-06-04T11:16:35+00:00"
+            "time": "2020-08-19T10:27:58+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "3.5.4",
+            "version": "3.5.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/97d7c8184c17f99f0e001fef90a416ded16a5acd",
-                "reference": "97d7c8184c17f99f0e001fef90a416ded16a5acd",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/4d3dc03a787248c05f2e0dd3698aea55a9fe7680",
+                "reference": "4d3dc03a787248c05f2e0dd3698aea55a9fe7680",
                 "shasum": ""
             },
             "require": {
@@ -449,6 +449,7 @@
                 "mrclay/minify": "^3.0.7",
                 "php": ">=7.0.0",
                 "pixelandtonic/imagine": "~1.2.2.1",
+                "sebastian/diff": "^2.0 || ^3.0 || ^4.0",
                 "seld/cli-prompt": "^1.0.3",
                 "symfony/yaml": "^3.2|^4.0",
                 "true/punycode": "^2.1.0",
@@ -501,7 +502,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-08-13T20:24:36+00:00"
+            "time": "2020-09-01T20:50:36+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -694,11 +695,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.7.1",
+            "version": "2.7.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/cff8b01a831f852ccbde5db9967f3aef26054fc8",
-                "reference": "cff8b01a831f852ccbde5db9967f3aef26054fc8",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/3af61a4d192f2272774095d1a6f31d06ed374c20",
+                "reference": "3af61a4d192f2272774095d1a6f31d06ed374c20",
                 "shasum": ""
             },
             "require": {
@@ -739,7 +740,7 @@
                 "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2020-08-14T14:09:12+00:00"
+            "time": "2020-09-02T16:03:10+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -1509,11 +1510,11 @@
         },
         {
             "name": "laminas/laminas-feed",
-            "version": "2.12.2",
+            "version": "2.12.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/8a193ac96ebcb3e16b6ee754ac2a889eefacb654",
-                "reference": "8a193ac96ebcb3e16b6ee754ac2a889eefacb654",
+                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/3c91415633cb1be6f9d78683d69b7dcbfe6b4012",
+                "reference": "3c91415633cb1be6f9d78683d69b7dcbfe6b4012",
                 "shasum": ""
             },
             "require": {
@@ -1526,16 +1527,6 @@
             },
             "replace": {
                 "zendframework/zend-feed": "^2.12.0"
-            },
-            "require-dev": {
-                "laminas/laminas-cache": "^2.7.2",
-                "laminas/laminas-coding-standard": "~1.0.0",
-                "laminas/laminas-db": "^2.8.2",
-                "laminas/laminas-http": "^2.7",
-                "laminas/laminas-servicemanager": "^2.7.8 || ^3.3",
-                "laminas/laminas-validator": "^2.10.1",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20",
-                "psr/http-message": "^1.0.1"
             },
             "suggest": {
                 "laminas/laminas-cache": "Laminas\\Cache component, for optionally caching feeds between requests",
@@ -1557,7 +1548,6 @@
                     "Laminas\\Feed\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -1567,7 +1557,7 @@
                 "feed",
                 "laminas"
             ],
-            "time": "2020-03-29T12:36:29+00:00"
+            "time": "2020-08-18T13:45:04+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",
@@ -1616,15 +1606,15 @@
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/fcd87520e4943d968557803919523772475e8ea3",
-                "reference": "fcd87520e4943d968557803919523772475e8ea3",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/4939c81f63a8a4968c108c440275c94955753b19",
+                "reference": "4939c81f63a8a4968c108c440275c94955753b19",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0"
+                "php": "^5.6 || ^7.0 || ^8.0"
             },
             "type": "library",
             "extra": {
@@ -1654,7 +1644,7 @@
                 "laminas",
                 "zf"
             ],
-            "time": "2020-05-20T16:45:56+00:00"
+            "time": "2020-08-18T16:34:51+00:00"
         },
         {
             "name": "league/csv",
@@ -1893,11 +1883,11 @@
         },
         {
             "name": "mikehaertl/php-shellcommand",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/8d98d8536e05abafe76a491da87296d824939076",
-                "reference": "8d98d8536e05abafe76a491da87296d824939076",
+                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/06d6220c77c4632b639f4855f76026c59bceb8aa",
+                "reference": "06d6220c77c4632b639f4855f76026c59bceb8aa",
                 "shasum": ""
             },
             "require": {
@@ -1909,7 +1899,6 @@
                     "mikehaertl\\shellcommand\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1923,7 +1912,7 @@
             "keywords": [
                 "shell"
             ],
-            "time": "2019-12-20T08:48:10+00:00"
+            "time": "2020-08-30T09:56:40+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2768,6 +2757,49 @@
             "time": "2017-01-27T20:57:22+00:00"
         },
         {
+            "name": "sebastian/diff",
+            "version": "2.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/347c1d8b49c5c3ee30c7040ea6fc446790e6bddd",
+                "reference": "347c1d8b49c5c3ee30c7040ea6fc446790e6bddd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Diff implementation",
+            "homepage": "https://github.com/sebastianbergmann/diff",
+            "keywords": [
+                "diff"
+            ],
+            "time": "2017-08-03T08:09:46+00:00"
+        },
+        {
             "name": "seld/cli-prompt",
             "version": "1.0.3",
             "dist": {
@@ -2812,11 +2844,11 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.8.1",
+            "version": "1.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/3d5eb71705adfa34bd34b993400622932b2f62fd",
-                "reference": "3d5eb71705adfa34bd34b993400622932b2f62fd",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/590cfec960b77fd55e39b7d9246659e95dd6d337",
+                "reference": "590cfec960b77fd55e39b7d9246659e95dd6d337",
                 "shasum": ""
             },
             "require": {
@@ -2848,7 +2880,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2020-08-13T09:07:59+00:00"
+            "time": "2020-08-25T06:56:57+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -3977,19 +4009,16 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.26",
+            "version": "4.1.28",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/e5c4728fa6b2966b4b5c636519cbd530e060e738",
-                "reference": "e5c4728fa6b2966b4b5c636519cbd530e060e738",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/8919a19846d2b100e664d9e3cecfcaba4f57d9b4",
+                "reference": "8919a19846d2b100e664d9e3cecfcaba4f57d9b4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
                 "voku/portable-utf8": "~5.4.27"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "extra": {
@@ -4002,7 +4031,6 @@
                     "voku\\helper\\": "src/voku/helper/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4025,15 +4053,15 @@
                 "security",
                 "xss"
             ],
-            "time": "2020-08-08T20:15:45+00:00"
+            "time": "2020-08-27T22:43:59+00:00"
         },
         {
             "name": "voku/arrayy",
-            "version": "7.8.2",
+            "version": "7.8.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/ff32efd0036f776bd7adc3e7e6e3441d5c037c35",
-                "reference": "ff32efd0036f776bd7adc3e7e6e3441d5c037c35",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/f8d0bcde0405d5814d8463224915b08a735254d4",
+                "reference": "f8d0bcde0405d5814d8463224915b08a735254d4",
                 "shasum": ""
             },
             "require": {
@@ -4072,7 +4100,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2020-07-28T21:43:54+00:00"
+            "time": "2020-08-22T10:52:20+00:00"
         },
         {
             "name": "voku/email-check",
