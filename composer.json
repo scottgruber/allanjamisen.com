@@ -7,7 +7,7 @@
     "email": "scott@scottgruber.me"
   }],
   "require": {
-    "craftcms/cms": "3.5.8",
+    "craftcms/cms": "3.5.9",
     "craftcms/feed-me": "4.2.3",
     "craftcms/postmark": "2.0.2",
     "craftcms/redactor": "2.7.4",

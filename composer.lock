@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "216951ac0198a58199a08894d998a8fe",
+    "content-hash": "591d8bb8c9292f30a830267581e17957",
     "packages": [
         {
             "name": "cakephp/core",
@@ -271,18 +271,15 @@
         },
         {
             "name": "composer/semver",
-            "version": "1.5.1",
+            "version": "1.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/c6bea70230ef4dd483e6bbcab6005f682ed3a8de",
-                "reference": "c6bea70230ef4dd483e6bbcab6005f682ed3a8de",
+                "url": "https://api.github.com/repos/composer/semver/zipball/114f819054a2ea7db03287f5efb757e2af6e4079",
+                "reference": "114f819054a2ea7db03287f5efb757e2af6e4079",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5"
             },
             "type": "library",
             "extra": {
@@ -295,7 +292,6 @@
                     "Composer\\Semver\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -323,7 +319,7 @@
                 "validation",
                 "versioning"
             ],
-            "time": "2020-01-13T12:06:48+00:00"
+            "time": "2020-09-09T09:34:06+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -417,11 +413,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.5.8",
+            "version": "3.5.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/4d3dc03a787248c05f2e0dd3698aea55a9fe7680",
-                "reference": "4d3dc03a787248c05f2e0dd3698aea55a9fe7680",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/23a16c91afcdd2ec31491944de69593b6b27bd41",
+                "reference": "23a16c91afcdd2ec31491944de69593b6b27bd41",
                 "shasum": ""
             },
             "require": {
@@ -502,7 +498,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-09-01T20:50:36+00:00"
+            "time": "2020-09-08T19:50:38+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -2187,11 +2183,11 @@
         },
         {
             "name": "opis/closure",
-            "version": "3.5.6",
+            "version": "3.5.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/closure/zipball/e8d34df855b0a0549a300cb8cb4db472556e8aa9",
-                "reference": "e8d34df855b0a0549a300cb8cb4db472556e8aa9",
+                "url": "https://api.github.com/repos/opis/closure/zipball/4531e53afe2fc660403e76fb7644e95998bff7bf",
+                "reference": "4531e53afe2fc660403e76fb7644e95998bff7bf",
                 "shasum": ""
             },
             "require": {
@@ -2234,7 +2230,7 @@
                 "serialization",
                 "serialize"
             ],
-            "time": "2020-08-11T08:46:50+00:00"
+            "time": "2020-09-06T17:02:15+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -4057,11 +4053,11 @@
         },
         {
             "name": "voku/arrayy",
-            "version": "7.8.3",
+            "version": "7.8.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/f8d0bcde0405d5814d8463224915b08a735254d4",
-                "reference": "f8d0bcde0405d5814d8463224915b08a735254d4",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/1cf7833bf5408f6f5731083364d04abb6a25d9e6",
+                "reference": "1cf7833bf5408f6f5731083364d04abb6a25d9e6",
                 "shasum": ""
             },
             "require": {
@@ -4100,7 +4096,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2020-08-22T10:52:20+00:00"
+            "time": "2020-09-06T19:10:55+00:00"
         },
         {
             "name": "voku/email-check",
